@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Read all from 'table_plongee' table{% endblock %}
+{% block title %}Read from 'table_plongee' table{% endblock %}
 
 {% block body %}
     {% include 'header.html.twig' %}
     {% include 'table_plongee/navbar.html.twig' %}
     <div class="example-wrapper">
-        <h1>Display of all 'table_plongee'</h1>
+        <h1>Display from 'table_plongee'</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -15,12 +15,10 @@
                  </tr>
             </thead>
             <tbody>
-                {% for table_plongee in tables_plongee %}
                 <tr>
                     <td>{{ table_plongee.id }}</td>
                     <td>{{ table_plongee.nom }}</td>
                 </tr>
-                {% endfor %}
             </tbody>
         </table>
     </div>

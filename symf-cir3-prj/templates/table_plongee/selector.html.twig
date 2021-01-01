@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Back Office - Select ID {% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    {% include 'table_plongee/navbar.html.twig' %}
+    <p>Please select your ID for {{ crud_method }} in '{{ entity }}' table:</p>
+    <form action="redirect.php" method="POST">
+        Entity : <input type="text" name="entity" value="{{ entity }}"><br>
+        CRUD method : <input type="text" name="crud_method" value="{{ crud_method }}"><br>
+        ID : <input type="number" name="id"><br>
+        <input type="submit">
+    </form>
+    {% include 'footer.html.twig' %}
+{% endblock %}

@@ -1,26 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Read all from 'table_plongee' table{% endblock %}
+{% block title %}Read from 'profondeur' table{% endblock %}
 
 {% block body %}
     {% include 'header.html.twig' %}
-    {% include 'table_plongee/navbar.html.twig' %}
+    {% include 'profondeur/navbar.html.twig' %}
     <div class="example-wrapper">
-        <h1>Display of all 'table_plongee'</h1>
+        <h1>Display from 'profondeur'</h1>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nom</th>
+                    <th scope="col">Correspond à la table</th>
+                    <th scope="col">Profondeur</th>
                  </tr>
             </thead>
             <tbody>
-                {% for table_plongee in tables_plongee %}
                 <tr>
-                    <td>{{ table_plongee.id }}</td>
-                    <td>{{ table_plongee.nom }}</td>
+                    <td>{{ profondeur.id }}</td>
+                    <td>{{ profondeur.correspond }}</td>
+                    <td>{{ profondeur.profondeur }}</td>
                 </tr>
-                {% endfor %}
             </tbody>
         </table>
     </div>

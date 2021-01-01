@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit specific 'temps'{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    {% include 'temps/navbar.html.twig' %}
+    <h1> Edit specific 'temps' </h1>
+    {{ include('temps/_form.html.twig', {'button_label': 'Update'}) }}
+    {% include 'footer.html.twig' %}
+{% endblock %}
