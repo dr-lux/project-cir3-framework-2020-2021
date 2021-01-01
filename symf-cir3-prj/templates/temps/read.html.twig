@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Read from 'temps' table{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    {% include 'temps/navbar.html.twig' %}
+    <div class="example-wrapper">
+        <h2>Display from 'profondeur'</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Depth</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Time at bearing 15 meters</th>
+                    <th scope="col">Time at bearing 12 meters</th>
+                    <th scope="col">Time at bearing 9 meters</th>
+                    <th scope="col">Time at bearing 6 meters</th>
+                    <th scope="col">Time at bearing 3 meters</th>
+                 </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ temps.id }}</td>
+                    <td>{{ temps.EstA }}</td>
+                    <td>{{ temps.temps }}</td>
+                    <td>{{ temps.palier15 }}</td>
+                    <td>{{ temps.palier12 }}</td>
+                    <td>{{ temps.palier9 }}</td>
+                    <td>{{ temps.palier6 }}</td>
+                    <td>{{ temps.palier3 }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% include 'footer.html.twig' %}
+{% endblock %}

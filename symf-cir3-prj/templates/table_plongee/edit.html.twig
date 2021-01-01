@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit specific table_plongee{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    {% include 'table_plongee/navbar.html.twig' %}
+    <h1> Edit specific table_plongee </h1>
+    {{ include('table_plongee/_form.html.twig', {'button_label': 'Update'}) }}
+    {% include 'footer.html.twig' %}
+{% endblock %}

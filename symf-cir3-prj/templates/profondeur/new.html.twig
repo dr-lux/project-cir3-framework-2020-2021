@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New profondeur{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    {% include 'profondeur/navbar.html.twig' %}
+    {{ include('profondeur/_form.html.twig', {'button_label': 'Create'}) }}
+    {% include 'footer.html.twig' %}
+{% endblock %}
