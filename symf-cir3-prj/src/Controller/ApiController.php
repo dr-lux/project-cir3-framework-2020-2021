@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Temps;
 use App\Entity\Profondeur;
 use App\Entity\TablePlongee;
+use App\Entity\DefaultParam;
 
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -64,59 +65,23 @@ class ApiController extends AbstractController
         return $response;
     }
 
-    // /**
-    // * @Route("/temps/id/{id}", name="api_id_temps"
-    // */
+    /**
+    * @Route("/defaultParam", name="api_defaultParam")
+    */
     
-    //  public function ApiIdTemps($id)
-    // {
-       
-    //     $temps = $this->getDoctrine()
-    //         ->getRepository(Temps::class)
-    //         ->findApiId($id);
-
-    //     if (!$temps) {
-    //         $data = [
-    //             'status' => 404,
-    //             'errors' => "Post not found",
-    //            ];
-    //         return new JsonResponse($data);
-    //     }
-
-    //     $response = new Response();
+    public function ApiDefaultParam()
+    {
+        $defaultParam = $this->getDoctrine()
+                            ->getRepository(DefaultParam::class)
+                            ->findApi();
         
-    //     $response->setContent(json_encode($temps));
-	// 	$response->headers->set('Content-Type', 'application/json');
-	// 	$response->headers->set('Access-Control-Allow-Origin', '*');
-    //     return $response;
-    // }
-
-    // /**
-    // * @Route("/temps/idProfondeur/{idProfondeur}", name="api_estAId_temps")
-    // */
-
-    // public function Api_EstAId_Temps($idProfondeur)
-    // {
-       
-    //     $tempss = $this->getDoctrine()
-    //         ->getRepository(Temps::class)
-    //         ->findApiByProfondeur($idProfondeur);
-
-    //     if (!$tempss) {
-    //         $data = [
-    //             'status' => 404,
-    //             'errors' => "Post not found",
-    //            ];
-    //         return new JsonResponse($data);
-    //     }
-
-    //     $response = new Response();
+        $response = new Response();
         
-    //     $response->setContent(json_encode($tempss));
-	// 	$response->headers->set('Content-Type', 'application/json');
-	// 	$response->headers->set('Access-Control-Allow-Origin', '*');
-    //     return $response;
-    // }
+        $response->setContent(json_encode($defaultParam));
+		$response->headers->set('Content-Type', 'application/json');
+		$response->headers->set('Access-Control-Allow-Origin', '*');
+        return $response;
+    }
 
     /**
     * @Route("/temps/depth/{depth}/time/{time}", name="api_Temps_by_Depth_and_Time")
