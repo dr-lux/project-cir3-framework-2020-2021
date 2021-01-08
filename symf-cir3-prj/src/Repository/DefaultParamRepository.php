@@ -20,34 +20,6 @@ class DefaultParamRepository extends ServiceEntityRepository
         parent::__construct($registry, DefaultParam::class);
     }
 
-    // /**
-    //  * @return DefaultParam[] Returns an array of DefaultParam objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?DefaultParam
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
     public function findApi()
     {
         return $this->createQueryBuilder('c')
