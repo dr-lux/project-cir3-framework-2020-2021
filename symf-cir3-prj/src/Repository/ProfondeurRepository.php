@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Profondeur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
 
 /**
  * @method Profondeur|null find($id, $lockMode = null, $lockVersion = null)
@@ -47,4 +48,11 @@ class ProfondeurRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findApiAll()
+    {
+        return $this->createQueryBuilder('c')
+            ->getQuery()
+            ->getResult(Query::HYDRATE_ARRAY)
+        ;
+    }
 }
