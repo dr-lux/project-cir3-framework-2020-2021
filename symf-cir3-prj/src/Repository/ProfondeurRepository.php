@@ -20,34 +20,6 @@ class ProfondeurRepository extends ServiceEntityRepository
         parent::__construct($registry, Profondeur::class);
     }
 
-    // /**
-    //  * @return Profondeur[] Returns an array of Profondeur objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Profondeur
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
     public function findApiAll()
     {
         return $this->createQueryBuilder('c')
