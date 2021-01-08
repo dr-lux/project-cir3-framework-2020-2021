@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Temps;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
 
 /**
  * @method Temps|null find($id, $lockMode = null, $lockVersion = null)
@@ -47,4 +48,29 @@ class TempsRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findApiAll()
+    {
+        return $this->createQueryBuilder('c')
+            ->getQuery()
+            ->getResult(Query::HYDRATE_ARRAY)
+        ;
+    }
+
+    public function findApiId($id)
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult(Query::HYDRATE_ARRAY);
+    }
+
+    public function findApiByProfondeur($idProfondeur)
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.est_a_id = :idProfondeur')
+            ->setParameter('idProdondeur', $idProfondeur)
+            ->getQuery()
+            ->getResult(Query::HYDRATE_ARRAY);
+    }
 }

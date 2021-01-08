@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\TablePlongee;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
 
 /**
  * @method TablePlongee|null find($id, $lockMode = null, $lockVersion = null)
@@ -47,4 +48,11 @@ class TablePlongeeRepository extends ServiceEntityRepository
         ;
     }
     */
+    // public function findApiAll()
+    // {
+    //     return $this->createQueryBuilder('c')
+    //         ->getQuery()
+    //         ->getResult(Query::HYDRATE_ARRAY)
+    //     ;
+    // }
 }
