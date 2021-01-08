@@ -91,16 +91,43 @@ class ApiController extends AbstractController
     //     return $response;
     // }
 
+    // /**
+    // * @Route("/temps/idProfondeur/{idProfondeur}", name="api_estAId_temps")
+    // */
+
+    // public function Api_EstAId_Temps($idProfondeur)
+    // {
+       
+    //     $tempss = $this->getDoctrine()
+    //         ->getRepository(Temps::class)
+    //         ->findApiByProfondeur($idProfondeur);
+
+    //     if (!$tempss) {
+    //         $data = [
+    //             'status' => 404,
+    //             'errors' => "Post not found",
+    //            ];
+    //         return new JsonResponse($data);
+    //     }
+
+    //     $response = new Response();
+        
+    //     $response->setContent(json_encode($tempss));
+	// 	$response->headers->set('Content-Type', 'application/json');
+	// 	$response->headers->set('Access-Control-Allow-Origin', '*');
+    //     return $response;
+    // }
+
     /**
-    * @Route("/temps/idProfondeur/{idProfondeur}", name="api_estAId_temps")
+    * @Route("/temps/depth/{depth}/time/{time}", name="api_Temps_by_Depth_and_Time")
     */
 
-    public function Api_EstAId_Temps($idProfondeur)
+    public function Api_Temps_by_Depth_and_Time($depth, $time)
     {
        
         $tempss = $this->getDoctrine()
             ->getRepository(Temps::class)
-            ->findApiByProfondeur($idProfondeur);
+            ->findApi_Temps_by_Depth_and_Time($depth, $time);
 
         if (!$tempss) {
             $data = [

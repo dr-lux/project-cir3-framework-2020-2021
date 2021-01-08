@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Temps;
+use App\Entity\Profondeur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query;
@@ -65,11 +66,15 @@ class TempsRepository extends ServiceEntityRepository
             ->getResult(Query::HYDRATE_ARRAY);
     }
 
-    public function findApiByProfondeur($idProfondeur)
+    public function findApi_Temps_by_Depth_and_Time($depth, $time)
     {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.est_a_id = :idProfondeur')
-            ->setParameter('idProdondeur', $idProfondeur)
+            ->innerJoin(Profondeur::class, 'p', 'WITH', 't.est_a = p.id')
+            ->where('p.profondeur >= :depth')
+            ->setParameter('depth', $depth)
+            ->andWhere('t.temps >= :time')
+            ->setParameter('time', $time)
+            ->setMaxResults(1)
             ->getQuery()
             ->getResult(Query::HYDRATE_ARRAY);
     }
