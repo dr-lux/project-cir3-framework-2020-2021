@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit specific 'DefaultParam'{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    {% include 'default_param/navbar.html.twig' %}
+    <h1> Edit specific 'DefaultParam' </h1>
+    {{ include('default_param/_form.html.twig', {'button_label': 'Update'}) }}
+    {% include 'footer.html.twig' %}
+{% endblock %}

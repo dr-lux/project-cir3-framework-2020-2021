@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Read all from 'temps' table{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('backoffice.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    {% include 'default_param/navbar.html.twig' %}
+    <div class="example-wrapper">
+        <h2>Display of all 'defaultParam'</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Mean breath</th>
+                    <th scope="col">Speed falling</th>
+                    <th scope="col">Speed rising before bearing</th>
+                    <th scope="col">Speed rising between bearing</th>                
+                 </tr>
+            </thead>
+            <tbody>
+                {% for defaultParam in defaultParams %}
+                <tr>
+                    <td>{{ defaultParam.id }}</td>
+                    <td>{{ defaultParam.meanBreath }}</td>
+                    <td>{{ defaultParam.speedFalling }}</td>
+                    <td>{{ defaultParam.speedRisingBeforeBearing }}</td>
+                    <td>{{ defaultParam.speedRisingBetweenBearing }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% include 'footer.html.twig' %}
+{% endblock %}
