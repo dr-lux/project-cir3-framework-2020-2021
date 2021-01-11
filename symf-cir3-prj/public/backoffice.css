@@ -1,9 +1,83 @@
-table tbody tr:nth-child(even){
+/* Stylesheet table */
+
+table tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-table tbody tr:hover {background-color: #ddd;}
+table tbody tr:hover {
+    background-color: #ddd;
+}
 
-table thead tr{
-    background-color: blue;
+table thead tr {
+    background-color: lightblue;
+}
+
+table {
+    display: inline-block;
+}
+
+/* Stylesheet link */
+
+.nav-btn:link, .nav-btn:visited {
+    text-decoration: none;
+    background-color: lightblue;
+    color: black;
+    padding: 1% 2%;
+    text-align: center;
+}
+
+.nav-btn:active, .nav-btn:hover {
+    background-color: lightgrey;
+}
+
+/* Stylesheet footer */
+
+#footer {
+    border-top-style: solid;
+    text-align: center;
+    position: relative;
+    bottom: 3%;
+    width: 100%;
+}
+
+/* Stylesheet navbars */
+
+.nav {
+    background-color: lightblue;
+}
+
+.nav a {
+    display: inline-block;
+}
+
+.nav h4, .nav h3{
+    display: inline-block;
+}
+
+.nav:first-of-type{
+    border-bottom-style: solid;
+}
+
+/* Stylesheet h */
+
+h1 {
+    text-align: center;
+}
+
+/* Stylesheet from, input */
+
+input[type=text], input[type=number]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form{
+    margin: auto;
+    width: 10%;
+    text-align: center;
 }

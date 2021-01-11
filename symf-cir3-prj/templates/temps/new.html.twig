@@ -2,6 +2,10 @@
 
 {% block title %}New 'temps'{% endblock %}
 
+{% block stylesheets %}
+    <link href="{{ asset('backoffice.css') }}" rel="stylesheet" />
+{% endblock %}
+
 {% block body %}
     {% include 'header.html.twig' %}
     {% include 'temps/navbar.html.twig' %}

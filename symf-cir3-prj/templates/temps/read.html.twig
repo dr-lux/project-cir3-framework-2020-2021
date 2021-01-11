@@ -2,6 +2,10 @@
 
 {% block title %}Read from 'temps' table{% endblock %}
 
+{% block stylesheets %}
+    <link href="{{ asset('backoffice.css') }}" rel="stylesheet" />
+{% endblock %}
+
 {% block body %}
     {% include 'header.html.twig' %}
     {% include 'temps/navbar.html.twig' %}
