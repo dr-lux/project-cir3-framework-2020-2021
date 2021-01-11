@@ -2,6 +2,10 @@
 
 {% block title %}New table_plongee{% endblock %}
 
+{% block stylesheets %}
+    <link href="{{ asset('backoffice.css') }}" rel="stylesheet" />
+{% endblock %}
+
 {% block body %}
     {% include 'header.html.twig' %}
     {% include 'table_plongee/navbar.html.twig' %}

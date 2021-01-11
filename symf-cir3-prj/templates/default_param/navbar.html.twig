@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h4>Tables :</h4>
-    <a href="http://localhost:8000/defaultParam/read/all">Read all<a>
-    <a href="http://localhost:8000/defaultParam/read">Read specific ID<a>
-    <a href="http://localhost:8000/defaultParam/new">Create new element<a>
-    <a href="http://localhost:8000/defaultParam/edit">Edit specific ID<a>
-    <a href="http://localhost:8000/defaultParam/delete">Delete specific ID<a>  
+    <div class="nav">
+        <h4>Methods :</h4>
+        <a class="nav-btn" href="http://localhost:8000/defaultParam/read/all">Read all<a>
+        <a class="nav-btn" href="http://localhost:8000/defaultParam/read">Read specific ID<a>
+        <a class="nav-btn" href="http://localhost:8000/defaultParam/new">Create new element<a>
+        <a class="nav-btn" href="http://localhost:8000/defaultParam/edit">Edit specific ID<a>
+        <a class="nav-btn" href="http://localhost:8000/defaultParam/delete">Delete specific ID<a>  
+    </div>
 {% endblock %}
