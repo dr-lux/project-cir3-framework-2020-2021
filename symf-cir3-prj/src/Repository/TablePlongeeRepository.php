@@ -1,11 +1,19 @@
 <?php
+/**
+ * @author: Titouan Allain
+ * @version: 1.0
+ * 
+ * TablePlongeeRepository.php
+ * 
+ * Repository of the 'TablePlongee'.
+ */
+
 
 namespace App\Repository;
 
 use App\Entity\TablePlongee;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Doctrine\ORM\Query;
 
 /**
  * @method TablePlongee|null find($id, $lockMode = null, $lockVersion = null)

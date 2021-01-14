@@ -1,4 +1,12 @@
 <?php
+/**
+ * @author: Titouan Allain
+ * @version: 1.0
+ * 
+ * DefaultParamRepository.php
+ * 
+ * Repository of the 'DefaultParam' entity with API's function.
+ */
 
 namespace App\Repository;
 
@@ -20,6 +28,11 @@ class DefaultParamRepository extends ServiceEntityRepository
         parent::__construct($registry, DefaultParam::class);
     }
 
+    // /**
+    //  * findApi()
+    //  * 
+    //  * Function to query the database to get the first "DefaultParam" entity. 
+    //  */
     public function findApi()
     {
         return $this->createQueryBuilder('c')
