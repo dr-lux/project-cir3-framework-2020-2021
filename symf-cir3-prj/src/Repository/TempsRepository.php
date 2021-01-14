@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * @author: Titouan Allain
+ * @version: 1.0
+ * 
+ * TempsRepository.php
+ * 
+ * Repository of the 'Temps' entity with API's functions.
+ */
 namespace App\Repository;
 
 use App\Entity\Temps;
@@ -21,6 +28,11 @@ class TempsRepository extends ServiceEntityRepository
         parent::__construct($registry, Temps::class);
     }
 
+    // /**
+    //  * findApiAll()
+    //  * 
+    //  * Function to query the database to get all "Temps" entities.
+    //  */
     public function findApiAll()
     {
         return $this->createQueryBuilder('c')
@@ -29,6 +41,13 @@ class TempsRepository extends ServiceEntityRepository
         ;
     }
 
+    // /**
+    //  * findApi_Temps_by_Depth_and_Time($depth, $time)
+    //  * 
+    //  * Function to query the database to get the first result from "Temps" where the depth and the time have some values.
+    //  * The equivalent MySQL query look like this: 
+    //  * SELECT * FROM temps INNER JOIN profondeur ON temps.est_a_id = profondeur.id WHERE profondeur>=`$depth` AND temps>=`$Time` LIMIT 1;
+    //  */
     public function findApi_Temps_by_Depth_and_Time($depth, $time)
     {
         return $this->createQueryBuilder('t')

@@ -1,4 +1,12 @@
 <?php
+/**
+ * @author: Titouan Allain
+ * @version: 1.0
+ * 
+ * ProfondeurRepository.php
+ * 
+ * Repository of the 'Profondeur' entity with API's function.
+ */
 
 namespace App\Repository;
 
@@ -20,6 +28,11 @@ class ProfondeurRepository extends ServiceEntityRepository
         parent::__construct($registry, Profondeur::class);
     }
 
+    // /**
+    //  * findApiAll()
+    //  * 
+    //  * Function to query the database to get all "Profondeur" entities.
+    //  */
     public function findApiAll()
     {
         return $this->createQueryBuilder('c')

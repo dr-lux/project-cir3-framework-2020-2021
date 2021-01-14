@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * @author: Titouan Allain
+ * @version: 1.0
+ * 
+ * DefaultParamController.php
+ * 
+ * Controller of the 'DefaultParam' entity with CRUD's functions.
+ */
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,6 +24,11 @@ class DefaultParamController extends AbstractController
      * @Route("defaultParam/read/all", name="defaultParam_readAll")
      */
 
+    // /**
+    //  * readAll()
+    //  * 
+    //  * Function for display all entries from "DefaultParam" by a twig.
+    //  */
     public function readAll()
     {
         $defaultParams = $this->getDoctrine()
@@ -32,6 +44,11 @@ class DefaultParamController extends AbstractController
      * @Route("defaultParam/read/{id}", name="defaultParam_read")
      */
 
+    // /**
+    //  * read($id)
+    //  *
+    //  * Function for display the entry where the id is specified and exist from "DefaultParam" by a twig.
+    //  */
     public function read($id)
     {
         $defaultParam = $this->getDoctrine()
@@ -51,9 +68,14 @@ class DefaultParamController extends AbstractController
     }
 
     /**
-    * @Route("defaultParam/read/", name="defaultParam_read_selector")
-    */
+     * @Route("defaultParam/read/", name="defaultParam_read_selector")
+     */
 
+    // /**
+    //  * readSelector()
+    //  *
+    //  * Function for redirect to the twig of read selector's choice of "DefaultParam".
+    //  */
     public function readSelector()
     {
         return $this->render('default_param/selector.html.twig', [
@@ -66,6 +88,11 @@ class DefaultParamController extends AbstractController
      * @Route("defaultParam/edit/{id}", name="defaultParam_edit", methods={"GET", "POST"})
      */
 
+    // /**
+    //  * edit(Request $request, DefaultParam $defaultParam)
+    //  * 
+    //  * Function for make an edition of an entry from "DefaultParam" by a twig.
+    //  */
     public function edit(Request $request, DefaultParam $defaultParam)
     {
         $form = $this->createForm(DefaultParamType::class, $defaultParam);
@@ -87,6 +114,11 @@ class DefaultParamController extends AbstractController
      * @Route("defaultParam/edit/", name="defaultParam_edit_selector")
      */
 
+    // /**
+    //  * editSelector()
+    //  *
+    //  * Function for redirect to the twig of edit selector's choice of "DefaultParam".
+    //  */
     public function editSelector()
     {
         return $this->render('default_param/selector.html.twig', [
@@ -96,9 +128,14 @@ class DefaultParamController extends AbstractController
     }
 
     /**
-    * @Route("defaultParam/new", name="defaultParam_new", methods={"GET","POST"})
-    */
-    
+     * @Route("defaultParam/new", name="defaultParam_new", methods={"GET","POST"})
+     */
+
+    // /**
+    //  * new(Request $request)
+    //  *
+    //  * Function for create a new "DefaultParam" entry.
+    //  */
     public function new(Request $request): Response
     {
         $defaultParam = new DefaultParam();
@@ -122,7 +159,14 @@ class DefaultParamController extends AbstractController
     /**
      * @Route("defaultParam/delete/{id}", name="defaultParam_delete")
      */
-
+    
+    // /**
+    //  * delete($id)
+    //  *
+    //  * Function for delete a specified "DefaultParam" entry.
+    //  */
+    
+    
     public function delete($id)
     {
         $defaultParam = $this->getDoctrine()
@@ -146,12 +190,17 @@ class DefaultParamController extends AbstractController
     }
     
     /**
-    * @Route("defaultParam/delete/", name="defaultParam_delete_selector")
-    */
+     * @Route("defaultParam/delete/", name="defaultParam_delete_selector")
+     */
 
+    // /**
+    //  * deleteSelector()
+    //  *
+    //  * Function for redirect to the twig of delete selector's choice of "DefaultParam".
+    //  */ 
     public function deleteSelector()
     {
-        return $this->render('default_param/selector.html.twig', [
+        return $this->render('defaultParam/selector.html.twig', [
             'crud_method' => "delete",
             'entity' => "defaultParam",
         ]);

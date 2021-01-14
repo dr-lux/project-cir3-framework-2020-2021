@@ -1,4 +1,12 @@
 <?php
+/**
+ * @author: Titouan Allain
+ * @version: 1.0
+ * 
+ * TempsController.php
+ * 
+ * Controller of the 'Temps' entity with CRUD's functions.
+ */
 
 namespace App\Controller;
 
@@ -13,19 +21,14 @@ use Symfony\Component\HttpFoundation\Request;
 class TempsController extends AbstractController
 {
     /**
-     * @Route("/temps", name="temps")
-     */
-    public function index(): Response
-    {
-        return $this->render('temps/index.html.twig', [
-            'controller_name' => 'TempsController',
-        ]);
-    }
-
-    /**
      * @Route("temps/read/all", name="temps_readAll")
      */
 
+    // /**
+    //  * readAll()
+    //  * 
+    //  * Function for display all entries from "Temps" by a twig.
+    //  */
     public function readAll()
     {
         $tempss = $this->getDoctrine()
@@ -41,6 +44,11 @@ class TempsController extends AbstractController
      * @Route("temps/read/{id}", name="temps_read")
      */
 
+    // /**
+    //  * read($id)
+    //  *
+    //  * Function for display the entry where the id is specified and exist from "Temps" by a twig.
+    //  */
     public function read($id)
     {
         $temps = $this->getDoctrine()
@@ -60,8 +68,14 @@ class TempsController extends AbstractController
     }
 
     /**
-    * @Route("temps/read/", name="temps_read_selector")
-    */
+     * @Route("temps/read/", name="temps_read_selector")
+     */
+
+    // /**
+    //  * readSelector()
+    //  *
+    //  * Function for redirect to the twig of read selector's choice of "Temps".
+    //  */
 
     public function readSelector()
     {
@@ -72,9 +86,14 @@ class TempsController extends AbstractController
     }
 
     /**
-    * @Route("temps/edit/{id}", name="temps_edit", methods={"GET", "POST"})
-    */
+     * @Route("temps/edit/{id}", name="temps_edit", methods={"GET", "POST"})
+     */
 
+    // /**
+    //  * edit(Request $request, Profondeur $profondeur)
+    //  * 
+    //  * Function for make an edition of an entry from "Temps" by a twig.
+    //  */
     public function edit(Request $request, Temps $temps)
     {   
         $form = $this->createForm(TempsType::class, $temps);
@@ -96,6 +115,11 @@ class TempsController extends AbstractController
      * @Route("temps/edit/", name="temps_edit_selector")
      */
 
+    // /**
+    //  * editSelector()
+    //  *
+    //  * Function for redirect to the twig of edit selector's choice of "Temps".
+    //  */
     public function editSelector()
     {
         return $this->render('temps/selector.html.twig', [
@@ -105,9 +129,14 @@ class TempsController extends AbstractController
     }
 
     /**
-    * @Route("temps/new", name="temps_new", methods={"GET","POST"})
-    */
+     * @Route("temps/new", name="temps_new", methods={"GET","POST"})
+     */
     
+    // /**
+    //  * new(Request $request)
+    //  *
+    //  * Function for create a new "Temps" entry.
+    //  */
     public function new(Request $request): Response
     {
         $temps = new Temps();
@@ -132,6 +161,11 @@ class TempsController extends AbstractController
      * @Route("temps/delete/{id}", name="temps_delete")
      */
 
+    // /**
+    //  * delete($id)
+    //  *
+    //  * Function for delete a specified "Temps" entry.
+    //  */
     public function delete($id)
     {
         $temps = $this->getDoctrine()
@@ -158,6 +192,11 @@ class TempsController extends AbstractController
     * @Route("temps/delete/", name="temps_delete_selector")
     */
 
+    // /**
+    //  * deleteSelector()
+    //  *
+    //  * Function for redirect to the twig of delete selector's choice of "Temps".
+    //  */
     public function deleteSelector()
     {
         return $this->render('temps/selector.html.twig', [
