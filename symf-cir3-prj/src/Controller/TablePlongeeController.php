@@ -26,13 +26,12 @@ class TablePlongeeController extends AbstractController
 {
     /**
      * @Route("table_plongee/read/all", name="table_plongee_readAll")
+     * 
+     * readAll()
+     * 
+     * Function for display all entries from "TablePlongee" by a twig.
      */
 
-    // /**
-    //  * readAll()
-    //  * 
-    //  * Function for display all entries from "TablePlongee" by a twig.
-    //  */
     public function readAll()
     {
         $tables_plongee = $this->getDoctrine()
@@ -46,13 +45,12 @@ class TablePlongeeController extends AbstractController
 
     /**
      * @Route("table_plongee/read/{id}", name="table_plongee_read")
+     * 
+     * read($id)
+     *
+     * Function for display the entry where the id is specified and exist from "TablePlongee" by a twig.
      */
 
-    // /**
-    //  * read($id)
-    //  *
-    //  * Function for display the entry where the id is specified and exist from "TablePlongee" by a twig.
-    //  */
     public function read($id)
     {
         $table_plongee = $this->getDoctrine()
@@ -72,14 +70,13 @@ class TablePlongeeController extends AbstractController
     }
 
     /**
-    * @Route("table_plongee/read/", name="table_plongee_read_selector")
-    */
+     * @Route("table_plongee/read/", name="table_plongee_read_selector")
+     *
+     * readSelector()
+     *
+     * Function for redirect to the twig of read selector's choice of "TablePlongee".
+     */
 
-    // /**
-    //  * readSelector()
-    //  *
-    //  * Function for redirect to the twig of read selector's choice of "TablePlongee".
-    //  */
     public function readSelector()
     {
         return $this->render('table_plongee/selector.html.twig', [
@@ -88,15 +85,39 @@ class TablePlongeeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("table_plongee/edit/{id}", name="table_plongee_edit", methods={"GET", "POST"})
+/**
+     * @Route("table_plongee/edit/check/{id}", name="table_plongee_edit_check", methods={"GET", "POST"})
+     * 
+     * checkEditAvailable($id)
+     * 
+     * Function for make a redirection to the edition page if the specified entry from "TablePlongee" exist.
      */
 
-    // /**
-    //  * edit(Request $request, TablePlongee $table_plongee)
-    //  * 
-    //  * Function for make an edition of an entry from "TablePlongee" by a twig.
-    //  */
+    public function checkEditAvailable($id)
+    {
+        $table_plongee = $this->getDoctrine()
+                ->getRepository(TablePlongee::class)
+                ->find($id);
+
+        if (!$table_plongee)
+        {
+            return $this->render('error.html.twig', [
+                'message' => "No data found for ID ".$id
+            ]);
+        }
+
+        header('Location: http://localhost:8000/table_plongee/edit/'.$id);
+        exit();
+    }
+
+    /**
+     * @Route("table_plongee/edit/{id}", name="table_plongee_edit", methods={"GET", "POST"})
+     * 
+     * edit(Request $request, TablePlongee $table_plongee)
+     * 
+     * Function for make an edition of an entry from "TablePlongee" by a twig.
+     */
+
     public function edit(Request $request, TablePlongee $table_plongee)
     {
         $form = $this->createForm(TablePlongeeType::class, $table_plongee);
@@ -116,13 +137,12 @@ class TablePlongeeController extends AbstractController
 
     /**
      * @Route("table_plongee/edit/", name="table_plongee_edit_selector")
+     * 
+     * editSelector()
+     *
+     * Function for redirect to the twig of edit selector's choice of "TablePlongee".
      */
 
-    // /**
-    //  * editSelector()
-    //  *
-    //  * Function for redirect to the twig of edit selector's choice of "TablePlongee".
-    //  */
     public function editSelector()
     {
         return $this->render('table_plongee/selector.html.twig', [
@@ -132,14 +152,13 @@ class TablePlongeeController extends AbstractController
     }
 
     /**
-    * @Route("table_plongee/new", name="table_plongee_new", methods={"GET","POST"})
-    */
-    
-    // /**
-    //  * new(Request $request)
-    //  *
-    //  * Function for create a new "TablePlongee" entry.
-    //  */
+     * @Route("table_plongee/new", name="table_plongee_new", methods={"GET","POST"})
+     *
+     * new(Request $request)
+     *
+     * Function for create a new "TablePlongee" entry.
+     */
+
     public function new(Request $request): Response
     {
         $table_plongee = new TablePlongee();
@@ -162,13 +181,12 @@ class TablePlongeeController extends AbstractController
 
     /**
      * @Route("table_plongee/delete/{id}", name="table_plongee_delete")
+     * 
+     * delete($id)
+     *
+     * Function for delete a specified "TablePlongee" entry.
      */
 
-    // /**
-    //  * delete($id)
-    //  *
-    //  * Function for delete a specified "TablePlongee" entry.
-    //  */
     public function delete($id)
     {
         // Delete "Profondeur" entries where they're attached to the "TablePlongee" entry to detele.
@@ -224,14 +242,13 @@ class TablePlongeeController extends AbstractController
     }
     
     /**
-    * @Route("table_plongee/delete/", name="table_plongee_delete_selector")
-    */
+     * @Route("table_plongee/delete/", name="table_plongee_delete_selector")
+     * 
+     * deleteSelector()
+     *
+     * Function for redirect to the twig of delete selector's choice of "TablePlongee".
+     */
 
-    // /**
-    //  * deleteSelector()
-    //  *
-    //  * Function for redirect to the twig of delete selector's choice of "TablePlongee".
-    //  */ 
     public function deleteSelector()
     {
         return $this->render('table_plongee/selector.html.twig', [

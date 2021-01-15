@@ -22,13 +22,12 @@ class DefaultParamController extends AbstractController
 {
     /**
      * @Route("defaultParam/read/all", name="defaultParam_readAll")
+     * 
+     * readAll()
+     * 
+     * Function for display all entries from "DefaultParam" by a twig.
      */
 
-    // /**
-    //  * readAll()
-    //  * 
-    //  * Function for display all entries from "DefaultParam" by a twig.
-    //  */
     public function readAll()
     {
         $defaultParams = $this->getDoctrine()
@@ -42,13 +41,12 @@ class DefaultParamController extends AbstractController
 
     /**
      * @Route("defaultParam/read/{id}", name="defaultParam_read")
+     * 
+     * read($id)
+     *
+     * Function for display the entry where the id is specified and exist from "DefaultParam" by a twig.
      */
 
-    // /**
-    //  * read($id)
-    //  *
-    //  * Function for display the entry where the id is specified and exist from "DefaultParam" by a twig.
-    //  */
     public function read($id)
     {
         $defaultParam = $this->getDoctrine()
@@ -69,13 +67,12 @@ class DefaultParamController extends AbstractController
 
     /**
      * @Route("defaultParam/read/", name="defaultParam_read_selector")
+     * 
+     * readSelector()
+     *
+     * Function for redirect to the twig of read selector's choice of "DefaultParam".
      */
 
-    // /**
-    //  * readSelector()
-    //  *
-    //  * Function for redirect to the twig of read selector's choice of "DefaultParam".
-    //  */
     public function readSelector()
     {
         return $this->render('default_param/selector.html.twig', [
@@ -85,14 +82,38 @@ class DefaultParamController extends AbstractController
     }
 
     /**
-     * @Route("defaultParam/edit/{id}", name="defaultParam_edit", methods={"GET", "POST"})
+     * @Route("defaultParam/edit/check/{id}", name="defaultParam_edit_check", methods={"GET", "POST"})
+     * 
+     * checkEditAvailable($id)
+     * 
+     * Function for make a redirection to the edition page if the specified entry from "DefaultParam" exist.
      */
 
-    // /**
-    //  * edit(Request $request, DefaultParam $defaultParam)
-    //  * 
-    //  * Function for make an edition of an entry from "DefaultParam" by a twig.
-    //  */
+    public function checkEditAvailable($id)
+    {
+        $defaultParam = $this->getDoctrine()
+                ->getRepository(DefaultParam::class)
+                ->find($id);
+
+        if (!$defaultParam)
+        {
+            return $this->render('error.html.twig', [
+                'message' => "No data found for ID ".$id
+            ]);
+        }
+
+        header('Location: http://localhost:8000/defaultParam/edit/'.$id);
+        exit();
+    }
+
+    /**
+     * @Route("defaultParam/edit/{id}", name="defaultParam_edit", methods={"GET", "POST"})
+     * 
+     * edit(Request $request, DefaultParam $defaultParam)
+     * 
+     * Function for make an edition of an entry from "DefaultParam" by a twig.
+     */
+
     public function edit(Request $request, DefaultParam $defaultParam)
     {
         $form = $this->createForm(DefaultParamType::class, $defaultParam);
@@ -112,13 +133,12 @@ class DefaultParamController extends AbstractController
 
     /**
      * @Route("defaultParam/edit/", name="defaultParam_edit_selector")
+     *
+     * editSelector()
+     *
+     * Function for redirect to the twig of edit selector's choice of "DefaultParam".
      */
 
-    // /**
-    //  * editSelector()
-    //  *
-    //  * Function for redirect to the twig of edit selector's choice of "DefaultParam".
-    //  */
     public function editSelector()
     {
         return $this->render('default_param/selector.html.twig', [
@@ -129,13 +149,12 @@ class DefaultParamController extends AbstractController
 
     /**
      * @Route("defaultParam/new", name="defaultParam_new", methods={"GET","POST"})
+     * 
+     * new(Request $request)
+     *
+     * Function for create a new "DefaultParam" entry.
      */
 
-    // /**
-    //  * new(Request $request)
-    //  *
-    //  * Function for create a new "DefaultParam" entry.
-    //  */
     public function new(Request $request): Response
     {
         $defaultParam = new DefaultParam();
@@ -158,14 +177,11 @@ class DefaultParamController extends AbstractController
 
     /**
      * @Route("defaultParam/delete/{id}", name="defaultParam_delete")
+     * 
+     * delete($id)
+     *
+     * Function for delete a specified "DefaultParam" entry.
      */
-    
-    // /**
-    //  * delete($id)
-    //  *
-    //  * Function for delete a specified "DefaultParam" entry.
-    //  */
-    
     
     public function delete($id)
     {
@@ -191,13 +207,12 @@ class DefaultParamController extends AbstractController
     
     /**
      * @Route("defaultParam/delete/", name="defaultParam_delete_selector")
+     * 
+     * deleteSelector()
+     *
+     * Function for redirect to the twig of delete selector's choice of "DefaultParam".
      */
 
-    // /**
-    //  * deleteSelector()
-    //  *
-    //  * Function for redirect to the twig of delete selector's choice of "DefaultParam".
-    //  */ 
     public function deleteSelector()
     {
         return $this->render('defaultParam/selector.html.twig', [

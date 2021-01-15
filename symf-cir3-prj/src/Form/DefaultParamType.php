@@ -12,7 +12,7 @@ class DefaultParamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('meanBreath')
+            ->add('avgBreath')
             ->add('speedFalling')
             ->add('speedRisingBeforeBearing')
             ->add('speedRisingBetweenBearing')
