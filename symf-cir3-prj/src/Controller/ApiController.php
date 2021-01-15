@@ -141,16 +141,9 @@ class ApiController extends AbstractController
             return new JsonResponse($data);
         }
 
-        // $profondeur = $this->getDoctrine()
-        //         ->getRepository(Profondeur::class)
-        //         ->findFirstByDepth($depth);
-
         $response = new Response();
-
-
         
         $response->setContent(json_encode($tempss));
-        // $response->addContent(json_encode($profondeur));
 		$response->headers->set('Content-Type', 'application/json');
 		$response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;
