@@ -8,22 +8,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\ApiController\u003A\u003AApiProfondeur\u0028\u0029",
             "name": "ApiProfondeur",
-            "summary": "ApiProfondeur\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_ApiProfondeur"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AApiProfondeurByDepth\u0028\u0029",
+            "name": "ApiProfondeurByDepth",
+            "summary": "",
+            "url": "classes/App-Controller-ApiController.html#method_ApiProfondeurByDepth"
         },                {
             "fqsen": "\\App\\Controller\\ApiController\u003A\u003AApiTemps\u0028\u0029",
             "name": "ApiTemps",
-            "summary": "ApiTemps\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_ApiTemps"
         },                {
             "fqsen": "\\App\\Controller\\ApiController\u003A\u003AApiDefaultParam\u0028\u0029",
             "name": "ApiDefaultParam",
-            "summary": "ApiDefaultParam\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_ApiDefaultParam"
         },                {
             "fqsen": "\\App\\Controller\\ApiController\u003A\u003AApi_Temps_by_Depth_and_Time\u0028\u0029",
             "name": "Api_Temps_by_Depth_and_Time",
-            "summary": "Api_Temps_by_Depth_and_Time\u0028\u0024depth,\u0020\u0024time\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_Api_Temps_by_Depth_and_Time"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController",
@@ -33,42 +38,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003AreadAll\u0028\u0029",
             "name": "readAll",
-            "summary": "readAll\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_readAll"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003Aread\u0028\u0029",
             "name": "read",
-            "summary": "read\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_read"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003AreadSelector\u0028\u0029",
             "name": "readSelector",
-            "summary": "readSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_readSelector"
+        },                {
+            "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003AcheckEditAvailable\u0028\u0029",
+            "name": "checkEditAvailable",
+            "summary": "",
+            "url": "classes/App-Controller-DefaultParamController.html#method_checkEditAvailable"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003Aedit\u0028\u0029",
             "name": "edit",
-            "summary": "edit\u0028Request\u0020\u0024request,\u0020DefaultParam\u0020\u0024defaultParam\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_edit"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003AeditSelector\u0028\u0029",
             "name": "editSelector",
-            "summary": "editSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_editSelector"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003Anew\u0028\u0029",
             "name": "new",
-            "summary": "new\u0028Request\u0020\u0024request\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_new"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "delete\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_delete"
         },                {
             "fqsen": "\\App\\Controller\\DefaultParamController\u003A\u003AdeleteSelector\u0028\u0029",
             "name": "deleteSelector",
-            "summary": "deleteSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-DefaultParamController.html#method_deleteSelector"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController",
@@ -78,42 +88,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003AreadAll\u0028\u0029",
             "name": "readAll",
-            "summary": "readAll\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_readAll"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003Aread\u0028\u0029",
             "name": "read",
-            "summary": "read\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_read"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003AreadSelector\u0028\u0029",
             "name": "readSelector",
-            "summary": "readSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_readSelector"
+        },                {
+            "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003AcheckEditAvailable\u0028\u0029",
+            "name": "checkEditAvailable",
+            "summary": "",
+            "url": "classes/App-Controller-ProfondeurController.html#method_checkEditAvailable"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003Aedit\u0028\u0029",
             "name": "edit",
-            "summary": "edit\u0028Request\u0020\u0024request,\u0020Profondeur\u0020\u0024profondeur\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_edit"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003AeditSelector\u0028\u0029",
             "name": "editSelector",
-            "summary": "editSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_editSelector"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003Anew\u0028\u0029",
             "name": "new",
-            "summary": "new\u0028Request\u0020\u0024request\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_new"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "delete\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_delete"
         },                {
             "fqsen": "\\App\\Controller\\ProfondeurController\u003A\u003AdeleteSelector\u0028\u0029",
             "name": "deleteSelector",
-            "summary": "deleteSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-ProfondeurController.html#method_deleteSelector"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController",
@@ -123,42 +138,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003AreadAll\u0028\u0029",
             "name": "readAll",
-            "summary": "readAll\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_readAll"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003Aread\u0028\u0029",
             "name": "read",
-            "summary": "read\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_read"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003AreadSelector\u0028\u0029",
             "name": "readSelector",
-            "summary": "readSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_readSelector"
+        },                {
+            "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003AcheckEditAvailable\u0028\u0029",
+            "name": "checkEditAvailable",
+            "summary": "",
+            "url": "classes/App-Controller-TablePlongeeController.html#method_checkEditAvailable"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003Aedit\u0028\u0029",
             "name": "edit",
-            "summary": "edit\u0028Request\u0020\u0024request,\u0020TablePlongee\u0020\u0024table_plongee\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_edit"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003AeditSelector\u0028\u0029",
             "name": "editSelector",
-            "summary": "editSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_editSelector"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003Anew\u0028\u0029",
             "name": "new",
-            "summary": "new\u0028Request\u0020\u0024request\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_new"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "delete\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_delete"
         },                {
             "fqsen": "\\App\\Controller\\TablePlongeeController\u003A\u003AdeleteSelector\u0028\u0029",
             "name": "deleteSelector",
-            "summary": "deleteSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TablePlongeeController.html#method_deleteSelector"
         },                {
             "fqsen": "\\App\\Controller\\TempsController",
@@ -168,42 +188,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003AreadAll\u0028\u0029",
             "name": "readAll",
-            "summary": "readAll\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_readAll"
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003Aread\u0028\u0029",
             "name": "read",
-            "summary": "read\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_read"
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003AreadSelector\u0028\u0029",
             "name": "readSelector",
-            "summary": "readSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_readSelector"
+        },                {
+            "fqsen": "\\App\\Controller\\TempsController\u003A\u003AcheckEditAvailable\u0028\u0029",
+            "name": "checkEditAvailable",
+            "summary": "",
+            "url": "classes/App-Controller-TempsController.html#method_checkEditAvailable"
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003Aedit\u0028\u0029",
             "name": "edit",
-            "summary": "edit\u0028Request\u0020\u0024request,\u0020Profondeur\u0020\u0024profondeur\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_edit"
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003AeditSelector\u0028\u0029",
             "name": "editSelector",
-            "summary": "editSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_editSelector"
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003Anew\u0028\u0029",
             "name": "new",
-            "summary": "new\u0028Request\u0020\u0024request\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_new"
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "delete\u0028\u0024id\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_delete"
         },                {
             "fqsen": "\\App\\Controller\\TempsController\u003A\u003AdeleteSelector\u0028\u0029",
             "name": "deleteSelector",
-            "summary": "deleteSelector\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Controller-TempsController.html#method_deleteSelector"
         },                {
             "fqsen": "\\App\\Entity\\DefaultParam",
@@ -216,15 +241,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-DefaultParam.html#method_getId"
         },                {
-            "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003AgetMeanBreath\u0028\u0029",
-            "name": "getMeanBreath",
+            "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003AgetAvgBreath\u0028\u0029",
+            "name": "getAvgBreath",
             "summary": "",
-            "url": "classes/App-Entity-DefaultParam.html#method_getMeanBreath"
+            "url": "classes/App-Entity-DefaultParam.html#method_getAvgBreath"
         },                {
-            "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003AsetMeanBreath\u0028\u0029",
-            "name": "setMeanBreath",
+            "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003AsetAvgBreath\u0028\u0029",
+            "name": "setAvgBreath",
             "summary": "",
-            "url": "classes/App-Entity-DefaultParam.html#method_setMeanBreath"
+            "url": "classes/App-Entity-DefaultParam.html#method_setAvgBreath"
         },                {
             "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003AgetSpeedFalling\u0028\u0029",
             "name": "getSpeedFalling",
@@ -261,10 +286,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-DefaultParam.html#property_id"
         },                {
-            "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003A\u0024meanBreath",
-            "name": "meanBreath",
+            "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003A\u0024avgBreath",
+            "name": "avgBreath",
             "summary": "",
-            "url": "classes/App-Entity-DefaultParam.html#property_meanBreath"
+            "url": "classes/App-Entity-DefaultParam.html#property_avgBreath"
         },                {
             "fqsen": "\\App\\Entity\\DefaultParam\u003A\u003A\u0024speedFalling",
             "name": "speedFalling",
@@ -638,7 +663,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\DefaultParamRepository\u003A\u003AfindApi\u0028\u0029",
             "name": "findApi",
-            "summary": "findApi\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Repository-DefaultParamRepository.html#method_findApi"
         },                {
             "fqsen": "\\App\\Repository\\ProfondeurRepository",
@@ -655,6 +680,11 @@ Search.appendIndex(
             "name": "findApiAll",
             "summary": "findApiAll\u0028\u0029",
             "url": "classes/App-Repository-ProfondeurRepository.html#method_findApiAll"
+        },                {
+            "fqsen": "\\App\\Repository\\ProfondeurRepository\u003A\u003AfindFirstByDepth\u0028\u0029",
+            "name": "findFirstByDepth",
+            "summary": "findFirstByDepth\u0028\u0029",
+            "url": "classes/App-Repository-ProfondeurRepository.html#method_findFirstByDepth"
         },                {
             "fqsen": "\\App\\Repository\\TablePlongeeRepository",
             "name": "TablePlongeeRepository",
@@ -678,12 +708,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\TempsRepository\u003A\u003AfindApiAll\u0028\u0029",
             "name": "findApiAll",
-            "summary": "findApiAll\u0028\u0029",
+            "summary": "",
             "url": "classes/App-Repository-TempsRepository.html#method_findApiAll"
         },                {
             "fqsen": "\\App\\Repository\\TempsRepository\u003A\u003AfindApi_Temps_by_Depth_and_Time\u0028\u0029",
             "name": "findApi_Temps_by_Depth_and_Time",
-            "summary": "findApi_Temps_by_Depth_and_Time\u0028\u0024depth,\u0020\u0024time\u0029",
+            "summary": "",
             "url": "classes/App-Repository-TempsRepository.html#method_findApi_Temps_by_Depth_and_Time"
         },                {
             "fqsen": "\\",

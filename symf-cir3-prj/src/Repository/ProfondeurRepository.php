@@ -28,14 +28,30 @@ class ProfondeurRepository extends ServiceEntityRepository
         parent::__construct($registry, Profondeur::class);
     }
 
-    // /**
-    //  * findApiAll()
-    //  * 
-    //  * Function to query the database to get all "Profondeur" entities.
-    //  */
+    /**
+     * findApiAll()
+     * 
+     * Function to query the database to get all "Profondeur" entries.
+     */
     public function findApiAll()
     {
         return $this->createQueryBuilder('c')
+            ->getQuery()
+            ->getResult(Query::HYDRATE_ARRAY)
+        ;
+    }
+
+    /**
+     * findFirstByDepth()
+     * 
+     * Function to query the database to get the first "Profondeur" entry by a specified depth.
+     */
+    public function findFirstByDepth($depth)
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.profondeur >= :depth')
+            ->setParameter('depth', $depth)
+            ->setMaxResults(1)
             ->getQuery()
             ->getResult(Query::HYDRATE_ARRAY)
         ;

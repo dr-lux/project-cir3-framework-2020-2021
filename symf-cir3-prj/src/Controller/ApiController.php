@@ -31,13 +31,12 @@ class ApiController extends AbstractController
 {
     /**
      * @Route("/profondeur", name="api_profondeur")
+     * 
+     * ApiProfondeur()
+     * 
+     * Function for request all entries of "Profondeur" entity and send them as JSON data.
      */
 
-    // /**
-    //  * ApiProfondeur()
-    //  * 
-    //  * Function for request all entries of "Profondeur" entity and send them as JSON data.
-    //  */
     public function ApiProfondeur()
     {
         $profondeurs = $this->getDoctrine()
@@ -53,14 +52,35 @@ class ApiController extends AbstractController
     }
 
     /**
+     * @Route("/profondeur/depth/{depth}", name="api_profondeur_by_depth")
+     * 
+     * ApiProfondeurByDepth()
+     * 
+     * Function for request the first entry of "Profondeur" entity with a specified depth and send them as JSON data.
+     */
+
+    public function ApiProfondeurByDepth($depth)
+    {
+        $profondeurs = $this->getDoctrine()
+                            ->getRepository(Profondeur::class)
+                            ->findFirstByDepth($depth);
+        
+        $response = new Response();
+        
+        $response->setContent(json_encode($profondeurs));
+		$response->headers->set('Content-Type', 'application/json');
+		$response->headers->set('Access-Control-Allow-Origin', '*');
+        return $response;
+    }
+
+    /**
      * @Route("/temps", name="api_temps")
+     * 
+     * ApiTemps()
+     * 
+     * Function for request all entries of "Temps" entity and send them as JSON data.
      */
     
-    // /**
-    //  * ApiTemps()
-    //  * 
-    //  * Function for request all entries of "Temps" entity and send them as JSON data.
-    //  */
     public function ApiTemps()
     {
         $tempss = $this->getDoctrine()
@@ -77,13 +97,12 @@ class ApiController extends AbstractController
 
     /**
      * @Route("/defaultParam", name="api_defaultParam")
+     * 
+     * ApiDefaultParam()
+     * 
+     * Function for request all entries of "DefaultParam" entity and send them as JSON data.
      */
     
-    // /**
-    //  * ApiDefaultParam()
-    //  * 
-    //  * Function for request all entries of "DefaultParam" entity and send them as JSON data.
-    //  */
     public function ApiDefaultParam()
     {
         $defaultParam = $this->getDoctrine()
@@ -100,14 +119,12 @@ class ApiController extends AbstractController
 
     /**
      * @Route("/temps/depth/{depth}/time/{time}", name="api_Temps_by_Depth_and_Time")
+     * 
+     * Api_Temps_by_Depth_and_Time($depth, $time)
+     * 
+     * Function for request the first entry of "Temps" entity where depth and time values are 
+     * repectivly the minimum values of depth and time of this entry.
      */
-
-    // /**
-    //  * Api_Temps_by_Depth_and_Time($depth, $time)
-    //  * 
-    //  * Function for request the first entry of "Temps" entity where depth and time values are 
-    //  * repectivly the minimum values of depth and time of this entry.
-    //  */
 
     public function Api_Temps_by_Depth_and_Time($depth, $time)
     {
@@ -124,9 +141,16 @@ class ApiController extends AbstractController
             return new JsonResponse($data);
         }
 
+        // $profondeur = $this->getDoctrine()
+        //         ->getRepository(Profondeur::class)
+        //         ->findFirstByDepth($depth);
+
         $response = new Response();
+
+
         
         $response->setContent(json_encode($tempss));
+        // $response->addContent(json_encode($profondeur));
 		$response->headers->set('Content-Type', 'application/json');
 		$response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;

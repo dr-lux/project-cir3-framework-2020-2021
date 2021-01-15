@@ -10,7 +10,7 @@
     {% include 'header.html.twig' %}
     {% include 'default_param/navbar.html.twig' %}
     <div class="example-wrapper">
-        <h2>Display of all 'defaultParam'</h2>
+        <h1>Display of all 'defaultParam'</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -25,7 +25,7 @@
                 {% for defaultParam in defaultParams %}
                 <tr>
                     <td>{{ defaultParam.id }}</td>
-                    <td>{{ defaultParam.meanBreath }}</td>
+                    <td>{{ defaultParam.avgBreath }}</td>
                     <td>{{ defaultParam.speedFalling }}</td>
                     <td>{{ defaultParam.speedRisingBeforeBearing }}</td>
                     <td>{{ defaultParam.speedRisingBetweenBearing }}</td>

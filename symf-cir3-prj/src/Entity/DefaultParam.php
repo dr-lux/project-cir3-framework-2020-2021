@@ -20,7 +20,7 @@ class DefaultParam
     /**
      * @ORM\Column(type="integer")
      */
-    private $meanBreath;
+    private $avgBreath;
 
     /**
      * @ORM\Column(type="integer")
@@ -42,14 +42,14 @@ class DefaultParam
         return $this->id;
     }
 
-    public function getMeanBreath(): ?int
+    public function getAvgBreath(): ?int
     {
-        return $this->meanBreath;
+        return $this->avgBreath;
     }
 
-    public function setMeanBreath(int $meanBreath): self
+    public function setAvgBreath(int $avgBreath): self
     {
-        $this->meanBreath = $meanBreath;
+        $this->avgBreath = $avgBreath;
 
         return $this;
     }
