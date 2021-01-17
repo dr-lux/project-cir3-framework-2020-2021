@@ -1,0 +1,8 @@
+{
+    "staticUrl": "http://176.180.213.38:8000/",
+    "profondeur": "http://176.180.213.38:8000/api/profondeur",
+    "temps": "http://176.180.213.38:8000/api/temps",
+    "defaultParam": "http://176.180.213.38:8000/api/defaultParam",
+    "depth": "http://176.180.213.38:8000/api/profondeur/depth/{depth}",
+    "search": "http://176.180.213.38:8000/api/temps/depth/{depth}/time/{time}"
+}
