@@ -39,6 +39,7 @@ class ApiController extends AbstractController
 
     public function ApiProfondeur()
     {
+        header("Access-Control-Allow-Origin: *");
         $profondeurs = $this->getDoctrine()
                             ->getRepository(Profondeur::class)
                             ->findApiAll();
@@ -90,8 +91,8 @@ class ApiController extends AbstractController
         $response = new Response();
         
         $response->setContent(json_encode($tempss));
-		$response->headers->set('Content-Type', 'application/json');
-		$response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;
     }
 
@@ -128,7 +129,6 @@ class ApiController extends AbstractController
 
     public function Api_Temps_by_Depth_and_Time($depth, $time)
     {
-       
         $tempss = $this->getDoctrine()
             ->getRepository(Temps::class)
             ->findApi_Temps_by_Depth_and_Time($depth, $time);
@@ -142,7 +142,7 @@ class ApiController extends AbstractController
         }
 
         $response = new Response();
-        
+
         $response->setContent(json_encode($tempss));
 		$response->headers->set('Content-Type', 'application/json');
 		$response->headers->set('Access-Control-Allow-Origin', '*');
