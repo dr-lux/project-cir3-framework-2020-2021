@@ -39,7 +39,6 @@ class ApiController extends AbstractController
 
     public function ApiProfondeur()
     {
-        header("Access-Control-Allow-Origin: *");
         $profondeurs = $this->getDoctrine()
                             ->getRepository(Profondeur::class)
                             ->findApiAll();
