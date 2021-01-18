@@ -19,7 +19,7 @@ Ce projet de calculateur de temps de plongée ce décompose en deux partie:
 
 Un partie front-end pour l'utilisateur en React et une partie back-end pour l'administrateur en Symfony.
 
-NB: Les informations suivante sont pour une mise en route du service en mode dev, pour le mode prod, veuillez vous renseignez sur les build des codes des frameworks s
+NB: Les informations suivantes sont pour une mise en route du service en mode dev, pour le mode prod, veuillez vous renseignez sur les compilations des codes des frameworks.
 
 # Symfony
 
