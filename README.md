@@ -28,5 +28,9 @@ Après avoir modifié à votre convenance le fichier de configuration `.env`, vo
 `symfony server:start -d`
 
 # React
+Front end de l'application
+## API
+Les routes sont modifiables dans le fichier paths.json :
 
-`En cours de rédaction`
+ - `staticUrl` : url "statique" de l'api, c'est la partie fixe de l'url http://[ip server]/
+ - autres urls sont pour target l'api Symfony.
