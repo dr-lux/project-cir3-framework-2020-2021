@@ -7,16 +7,20 @@ import Temps from '../Dto/Temps';
  * React component.
  * @param {[Temps, object, number]} param0 
  */
-export default function Dive({dive, defaultParameters, airVolume})
+export default function Dive({dive, defaultParameters, bottleParams})
 {   
     let airConsumed = dive.getAirConsumedVolume(
         defaultParameters.avgBreath,
-        airVolume,
+        bottleParams[0] * bottleParams[1],
         defaultParameters.speedFalling,
         defaultParameters.speedRisingBeforeBearing,
         defaultParameters.speedRisingBetweenBearing
     );
+    let remPressure = ((bottleParams[0] * bottleParams[1]) - airConsumed) / bottleParams[1];
     var dic = [
+        {"key": "Volume d'air disponible total", "value": (bottleParams[0] * bottleParams[1]) + " litres"},
+        {"key": "Volume d'air consommé :", "value": airConsumed ? airConsumed + " litres" : ""},
+        {"key": "Pression restante :", "value": remPressure < 0 ? 0 + " bar" : remPressure + " bars"},
         {"key": "Palier 3 :", "value": dive.palier3 ? dive.palier3 + " minutes" : "pas de palier à 3 m"},
         {"key": "Palier 6 :", "value": dive.palier6 ? dive.palier6 + " minutes" : "pas de palier à 6 m"},
         {"key": "Palier 9 :", "value": dive.palier9 ? dive.palier9 + " minutes" : "pas de palier à 9 m"},

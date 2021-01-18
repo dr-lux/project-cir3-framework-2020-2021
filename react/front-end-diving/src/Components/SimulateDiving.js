@@ -11,7 +11,7 @@ export default function SimulateDiving()
     // states
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formData, setFormData] = useState(undefined);
-    const [bottleContent, setBottleContent] = useState(undefined);
+    const [bottleParams, setBottleParams] = useState(undefined);
     const [errorMessage, setErrorMessage] = useState("");
     const [formErrorState, setFormErrorState] = useState(false);
     const [apiError, setApiError] = useState(false);
@@ -60,7 +60,7 @@ export default function SimulateDiving()
 
         if (!Number.isNaN(Number.parseInt(bottlePressure)) && !Number.isNaN(Number.parseInt(bottleVolume)))
         {
-            setBottleContent(Number.parseInt(bottlePressure) * Number.parseInt(bottleVolume));
+            setBottleParams([Number.parseInt(bottlePressure), Number.parseInt(bottleVolume)]);
         }
         else
         {
@@ -68,7 +68,7 @@ export default function SimulateDiving()
             setErrorMessage("Merci de remplir les champs pression de la bouteille et volume de la bouteille avec des valeurs numeriques");
             return false;
         }
-        console.error(depth);
+
         if (Number.isNaN(Number.parseInt(depth)) || Number.isNaN(Number.parseInt(depth)))
         {
             setErrorMessage("Merci de remplir les champs profondeur maxi et duree de la plongee avec des valeurs numeriques");
@@ -162,7 +162,7 @@ export default function SimulateDiving()
                                 <Dive 
                                     dive={value} 
                                     defaultParameters={defaultParams}
-                                    airVolume = {bottleContent}
+                                    bottleParams = {bottleParams}
                                 />
                             </li>
                         )
