@@ -52,6 +52,28 @@ class ApiController extends AbstractController
     }
 
     /**
+     * @Route("/profondeur/depth/{depth}", name="api_profondeur_by_depth")
+     * 
+     * ApiProfondeurByDepth()
+     * 
+     * Function for request the first entry of "Profondeur" entity with a specified depth and send them as JSON data.
+     */
+
+    public function ApiProfondeurByDepth($depth)
+    {
+        $profondeurs = $this->getDoctrine()
+                            ->getRepository(Profondeur::class)
+                            ->findFirstByDepth($depth);
+        
+        $response = new Response();
+        
+        $response->setContent(json_encode($profondeurs));
+		$response->headers->set('Content-Type', 'application/json');
+		$response->headers->set('Access-Control-Allow-Origin', '*');
+        return $response;
+    }
+
+    /**
      * @Route("/temps", name="api_temps")
      * 
      * ApiTemps()
