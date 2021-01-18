@@ -9,7 +9,7 @@ export default function DivTable({params})
             {params.map((value, index) => 
             {
                 return (
-                    <div className="row" id={index}>
+                    <div className="row" key={index}>
                         <div className="col-25">
                             <label>{value?.key}</label>
                         </div>
