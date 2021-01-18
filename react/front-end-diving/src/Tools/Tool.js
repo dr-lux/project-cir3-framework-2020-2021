@@ -50,6 +50,10 @@ export default class Tool
         requestOptions = requestOptions ?? this.getRequestOptions();
 
         let res = await fetch(url, requestOptions);
+        if (!res.ok)
+        {
+            throw new Error("Network error: " + res.status);
+        }
         let o = await res.json();
         if (unique)
         {

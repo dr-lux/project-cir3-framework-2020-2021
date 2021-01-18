@@ -11,10 +11,11 @@ import {
 import React, { useState } from 'react';
 import SimulateDiving from './Components/SimulateDiving';
 import IconMenu from './Components/IconMenu';
+import Tables from './Components/Tables';
 // Icons imports
 import homeIcon from './Icons/home-icon.webp';
 import calculatorIcon from "./Icons/calculator-icon.png";
-import Tables from './Components/Tables';
+import dbIcon from './Icons/db.png'
 
 export default function App() 
 {
@@ -49,7 +50,7 @@ export default function App()
                 </li>
                 <li>
                   <Link to="/dive-tables" onClick={onLinkClick}>
-                    Tables de plongées
+                    <IconMenu iconPath={dbIcon} altName="Diving tables and available depths" headerState={headerState}/>
                   </Link>
                 </li>
               </ul>

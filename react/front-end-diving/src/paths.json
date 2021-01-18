@@ -1,4 +1,5 @@
 {
+    "lux":"http://176.180.213.38:8000/",
     "staticUrl": "http://176.180.213.38:8000/",
     "profondeur": "api/profondeur",
     "temps": "api/temps",

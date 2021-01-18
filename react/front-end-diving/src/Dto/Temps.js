@@ -94,8 +94,7 @@ export default class Temps
     {
         if (!divingDownSpeed) return 0;
         else if (divingDownSpeed && typeof divingDownSpeed != "number") throw new Error("Provided diving speed is not a number");
-        
-        return (this.depth / divingDownSpeed) + this.time + this.getDTR();
+        else return (this.depth / divingDownSpeed) + this.time + this.getDTR();
     }
 
     /**
