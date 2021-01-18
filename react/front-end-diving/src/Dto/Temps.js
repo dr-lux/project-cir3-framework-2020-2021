@@ -92,8 +92,9 @@ export default class Temps
      */
     getDTP(divingDownSpeed)
     {
-        if (divingDownSpeed && typeof divingDownSpeed != "number") throw new Error("Provided diving speed is not a number");
-        else return 0;
+        if (!divingDownSpeed) return 0;
+        else if (divingDownSpeed && typeof divingDownSpeed != "number") throw new Error("Provided diving speed is not a number");
+        
         return (this.depth / divingDownSpeed) + this.time + this.getDTR();
     }
 
