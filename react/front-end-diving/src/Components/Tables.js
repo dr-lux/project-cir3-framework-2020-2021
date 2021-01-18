@@ -15,7 +15,6 @@ export default function Tables()
             .then(res => setDepths(res));
     });
 
-    
     return (
         <div>
             <div className="content">
@@ -28,7 +27,7 @@ export default function Tables()
                                 <div className="container">
                                     <DivTable params={
                                         [
-                                            {"key": "Profondeur de plongee :", "value": item?.profondeur + " metres"}
+                                            {"key": "Profondeur de plongée :", "value": item?.profondeur + " mètre"}
                                         ]
                                     }/>
                                 </div>
