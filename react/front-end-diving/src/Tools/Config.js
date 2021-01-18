@@ -11,7 +11,7 @@ export default class Config
      */
     static getUrl(url)
     {
-        return config[url];
+        return config[url] ?? "";
     }
 
     /**
