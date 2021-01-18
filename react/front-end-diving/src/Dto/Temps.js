@@ -111,7 +111,7 @@ export default class Temps
         let avgDownPressure = this.getAvgPressure(Math.ceil(this.depth / 10));
         let diveDownAirConsumed = airConsuption * avgDownPressure;
 
-        let diveAirConsumed = airConsuption * (this.depth / 10);
+        let diveAirConsumed = airConsuption * (this.getDepthPressure(this.depth));
 
         let diveUpAirConsumed = 0;
 
@@ -151,7 +151,7 @@ export default class Temps
             }
         });
 
-        return diveDownAirConsumed + diveAirConsumed + diveUpAirConsumed;
+        return [diveDownAirConsumed + diveAirConsumed + diveUpAirConsumed, diveDownAirConsumed + diveAirConsumed];
     }
 
     /**
