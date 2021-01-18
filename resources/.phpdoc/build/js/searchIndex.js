@@ -11,11 +11,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_ApiProfondeur"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AApiProfondeurByDepth\u0028\u0029",
-            "name": "ApiProfondeurByDepth",
-            "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_ApiProfondeurByDepth"
-        },                {
             "fqsen": "\\App\\Controller\\ApiController\u003A\u003AApiTemps\u0028\u0029",
             "name": "ApiTemps",
             "summary": "",
