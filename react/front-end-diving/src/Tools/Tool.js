@@ -1,7 +1,7 @@
 import Config from './Config';
 
 /**
- * Tooling class for app
+ * Tooling class for app.
  */
 export default class Tool
 {

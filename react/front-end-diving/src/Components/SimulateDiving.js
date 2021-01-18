@@ -16,15 +16,12 @@ export default function SimulateDiving()
         fetch(Config.getUrl("defaultParam"), Tool.getRequestOptions())
             .then(res => 
             {
-                res.json().then(value => setDefaultParams(value?.[0] ? value?.[0] : {"id":1,"avgBreath":20,"speedFalling":20,"speedRisingBeforeBearing":10,"speedRisingBetweenBearing":6}));
+                res.json()
+                    .then(value => setDefaultParams(value?.[0] ? value?.[0] : {"id":1,"avgBreath":20,"speedFalling":20,"speedRisingBeforeBearing":10,"speedRisingBetweenBearing":6}));
             })
             .catch(err => 
             {
                 console.error(JSON.stringify(err));
-                // if (!defaultParams)
-                // {
-                //     setDefaultParams({"id":1,"avgBreath":20,"speedFalling":20,"speedRisingBeforeBearing":10,"speedRisingBetweenBearing":6});
-                // }
             });
     });
 
@@ -32,6 +29,8 @@ export default function SimulateDiving()
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formData, setFormData] = useState(undefined);
     const [bottleContent, setBottleContent] = useState(undefined);
+    const [errorMessage, setErrorMessage] = useState("");
+    const [formErrorState, setFormErrorState] = useState(false);
 
     // events handlers
     async function onFormSubmit(e) {
@@ -58,11 +57,11 @@ export default function SimulateDiving()
         {
             let depthApi = await Tool.fetchAndJson(Tool.buildApiUrl(
                 {"depth": depth},
-                Config.getUrl("depth")), true);
+                Config.getApiUrl("depth")), true);
 
             let dives = await Tool.fetchAndJson(Tool.buildApiUrl(
                 {"depth": depth, "time": time}, 
-                Config.getUrl("search")
+                Config.getApiUrl("search")
             ));
 
             let tempsArray = [];
@@ -70,7 +69,7 @@ export default function SimulateDiving()
             dives.forEach(item => 
             {
                 let temps = new Temps(item);
-                temps.depth = depthApi.profondeur;
+                temps.depth = depthApi?.profondeur;
                 tempsArray.push(temps);
             });
 
@@ -92,6 +91,9 @@ export default function SimulateDiving()
         return (
             <div className="content">
                 <div>
+                    <div className="error-message" hidden={formErrorState ? "hidden" : ""}>
+                        <p><b>{errorMessage}</b></p>
+                    </div>
                     <h1>Simulation de plongée</h1>
                     <div className="container">
                         <TwoStateForm 

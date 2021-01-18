@@ -1,5 +1,8 @@
 import config from '../paths.json';
 
+/**
+ * DAL interfacing class.
+ */
 export default class Config
 {
     /**
@@ -9,5 +12,14 @@ export default class Config
     static getUrl(url)
     {
         return config[url];
+    }
+
+    /**
+     * urls: profondeur | temps | defaultParam | depth | search
+     * @param {string} url name of the stored api url.
+     */
+    static getApiUrl(url)
+    {
+        return this.getUrl("staticUrl") + this.getUrl(url);
     }
 }

@@ -4,7 +4,7 @@ import DivTable from "./DivTable";
 import Temps from '../Dto/Temps';
 
 /**
- * 
+ * React component.
  * @param {[Temps, object, number]} param0 
  */
 export default function Dive({dive, defaultParameters, airVolume})
@@ -28,7 +28,7 @@ export default function Dive({dive, defaultParameters, airVolume})
     ]
     return (
         <div>
-            <h2>Profondeur de {dive.depth} mètres</h2>
+            <h2>Plongée a {dive.depth} mètres</h2>
             <div className="container">
                 <DivTable params={dic}/>
             </div>

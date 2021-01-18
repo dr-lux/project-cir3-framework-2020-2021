@@ -1,5 +1,8 @@
 "use-strict";
 
+/**
+ * DTO
+ */
 export default class Temps 
 {
     id;
@@ -89,8 +92,8 @@ export default class Temps
      */
     getDTP(divingDownSpeed)
     {
-        if (typeof divingDownSpeed != "number") throw new Error("Provided diving speed is not a number");
-
+        if (divingDownSpeed && typeof divingDownSpeed != "number") throw new Error("Provided diving speed is not a number");
+        else return 0;
         return (this.depth / divingDownSpeed) + this.time + this.getDTR();
     }
 
@@ -151,6 +154,10 @@ export default class Temps
         return diveDownAirConsumed + diveAirConsumed + diveUpAirConsumed;
     }
 
+    /**
+     * Calculate the average pressure the diver goes under when diving down.
+     * @param {number} depth Maximum depth (minimum assumed to be 0)
+     */
     getAvgPressure(depth)
     {
         let avg = 0;
@@ -161,16 +168,33 @@ export default class Temps
         return avg / depth;
     }
 
+    /**
+     * Calculates the average pressure between 2 points under water.
+     * @param {number} depth1 First point
+     * @param {number} depth2 Second point
+     */
     getAvgPressureBetween(depth1, depth2)
     {
         return (this.getDepthPressure(depth1) + this.getDepthPressure(depth2)) / 2;
     }
 
+    /**
+     * Calculates the pressure of a point underwater.
+     * @param {number} depth Depth in meters
+     */
     getDepthPressure(depth)
     {
         return (depth / 10) + 1;
     }
 
+    /**
+     * Calculates the total air consumption of the diver going to a bearing and staying at the bearing.
+     * @param {number} airConsuption Air consumption of the diver
+     * @param {number} bearingDepth Depth of the bearing to go to from @param currentDepth
+     * @param {number} currentDepth Current depth of the diver
+     * @param {number} currentUpSpeed Diver's speed when going up
+     * @param {number} bearingStayTime Stay duration at the bearing
+     */
     getBearingAirConsumed(airConsuption, bearingDepth, currentDepth, currentUpSpeed, bearingStayTime)
     {
         let toBearingAC = (airConsuption * this.getAvgPressureBetween(bearingDepth, currentDepth)) * currentUpSpeed;

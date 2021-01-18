@@ -14,6 +14,7 @@ import IconMenu from './Components/IconMenu';
 // Icons imports
 import homeIcon from './Icons/home-icon.webp';
 import calculatorIcon from "./Icons/calculator-icon.png";
+import Tables from './Components/Tables';
 
 export default function App() 
 {
@@ -21,13 +22,13 @@ export default function App()
 
   const onLinkClick = e => 
   {
-    setHeaderState(false);
+    setHeaderState(!headerState);
   };
 
   const onHomeClick = e => 
   {
     setHeaderState(true);
-  }
+  };
 
   return (
     <Router>
@@ -42,12 +43,12 @@ export default function App()
                   </Link>
                 </li>
                 <li>
-                  <Link to="/content-dive" onClick={onLinkClick}>
+                  <Link to="/dive-simulator" onClick={onLinkClick}>
                     <IconMenu iconPath={calculatorIcon} altName="Simulate diving" headerState={headerState}/>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/content" onClick={onLinkClick}>
+                  <Link to="/dive-tables" onClick={onLinkClick}>
                     Tables de plongées
                   </Link>
                 </li>
@@ -56,8 +57,11 @@ export default function App()
           </div>
         </header>
         <Switch>
-          <Route path="/content-dive">
+          <Route path="/dive-simulator">
             <SimulateDiving />
+          </Route>
+          <Route path="/dive-tables">
+            <Tables/>
           </Route>
         </Switch>
       </div>
