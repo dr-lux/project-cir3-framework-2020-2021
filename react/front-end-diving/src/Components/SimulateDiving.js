@@ -58,8 +58,22 @@ export default function SimulateDiving()
             return false;
         }
 
-        if (!Number.isNaN(Number.parseInt(bottlePressure)) && !Number.isNaN(Number.parseInt(bottleVolume))) {
+        if (!Number.isNaN(Number.parseInt(bottlePressure)) && !Number.isNaN(Number.parseInt(bottleVolume)))
+        {
             setBottleContent(Number.parseInt(bottlePressure) * Number.parseInt(bottleVolume));
+        }
+        else
+        {
+            setFormErrorState(true);
+            setErrorMessage("Merci de remplir les champs pression de la bouteille et volume de la bouteille avec des valeurs numeriques");
+            return false;
+        }
+        console.error(depth);
+        if (Number.isNaN(Number.parseInt(depth)) || Number.isNaN(Number.parseInt(depth)))
+        {
+            setErrorMessage("Merci de remplir les champs profondeur maxi et duree de la plongee avec des valeurs numeriques");
+            setFormErrorState(true);
+            return false;
         }
 
         let formState = true;
@@ -90,7 +104,10 @@ export default function SimulateDiving()
         catch (e)
         {
             console.error(e.toString());
+            setFormErrorState(true);
+            setErrorMessage("Valeurs rentrées invalides, merci de choisir une profondeur plus basse ou/et un temps plus court");
             formState = false;
+
         }
 
         return formState;
